@@ -1,0 +1,19 @@
+{
+  "name": "ai-predict-service",
+  "version": "1.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server/server.js",
+    "dev": "nodemon ./src/server/server.js"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^7.6.0",
+    "@hapi/hapi": "^21.3.9",
+    "@tensorflow/tfjs-node": "^4.14.0",
+    "dotenv": "^16.4.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
