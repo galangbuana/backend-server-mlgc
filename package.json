@@ -7,13 +7,13 @@
     "dev": "nodemon ./src/server/server.js"
   },
   "dependencies": {
-    "@google-cloud/firestore": "^7.6.0",
-    "@hapi/hapi": "^21.3.9",
-    "@tensorflow/tfjs-node": "^4.14.0",
-    "dotenv": "^16.4.5",
-    "uuid": "^9.0.0"
+    "@google-cloud/firestore": "^7.11.0",
+    "@hapi/hapi": "^21.3.12",
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "dotenv": "^16.4.7",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.9"
   }
 }

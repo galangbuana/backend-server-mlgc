@@ -3,7 +3,9 @@ const { Firestore } = require("@google-cloud/firestore");
 // Fungsi untuk mendapatkan data riwayat prediksi
 async function getHistories() {
   const db = new Firestore({
-    projectId: "submissionmlgc-galangbuana",
+    databaseId: 'predictions',
+    projectId: 'submissionmlgc-galangbuana',
+    databaseId: 'predictions', 
     keyFilename: "./submissionmlgc-galangbuana-c3f00ad8f79f.json",
   });
 
