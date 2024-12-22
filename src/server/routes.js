@@ -12,7 +12,7 @@ const routes = [
       payload: {
         allow: ["multipart/form-data", "image/png"],
         multipart: true,
-        maxBytes: 1000 * 1000, // Batas ukuran file 1MB
+        maxBytes: 1000000, // Batas ukuran file 1MB
       },
     },
   },

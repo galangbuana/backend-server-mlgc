@@ -14,20 +14,20 @@ async function predictClassification(model, image) {
     const score = await prediction.dataSync();
     const confidenceScore = Math.max(...score) * 100;
 
-    const classes = ["Cancer", "No Cancer"];
-    let label, suggestion;
+    const label = confidenceScore <= 50 ? "Non-cancer" : "Cancer";
+    let suggestion;
 
-    if (confidenceScore > 50) {
-      label = classes[0];
-      suggestion = "Segera periksakan ke dokter!";
-    } else {
-      label = classes[1];
-      suggestion = "Tetap jaga kesehatan dan lakukan pemeriksaan rutin.";
+    if (label === "Cancer") {
+      suggestion = "Segera periksa ke dokter!";
+    }
+
+    if (label === "Non-cancer") {
+      suggestion = "Anda sehat!";
     }
 
     return { label, suggestion };
   } catch (error) {
-    throw new InputError("Kesalahan saat melakukan prediksi.");
+    throw new InputError("Terjadi kesalahan dalam melakukan prediksi");
   }
 }
 

@@ -7,8 +7,8 @@ const InputError = require("../exceptions/InputError");
 // Inisialisasi server
 (async () => {
   const server = Hapi.server({
-    port: 3000,
-    host: "localhost",
+    port: process.env.PORT || 3000,
+    host: "0.0.0.0",
     routes: {
       cors: {
         origin: ["*"],
@@ -24,7 +24,7 @@ const InputError = require("../exceptions/InputError");
   server.route(routes);
 
   // Middleware untuk memanipulasi response sebelum dikirimkan
-  server.ext("onPreResponse", (request, h) => {
+  server.ext("onPreResponse", function (request, h) {
     const response = request.response;
 
     if (response instanceof InputError) {

@@ -9,10 +9,7 @@ async function postPredictHandler(request, h) {
   const { model } = request.server.app; // Mengakses model dari server.app
 
   // Melakukan prediksi dengan fungsi predictClassification
-  const { confidenceScore, label, suggestion } = await predictClassification(
-    model,
-    image
-  );
+  const { label, suggestion } = await predictClassification(model, image);
 
   // Membuat ID dan timestamp untuk data
   const id = crypto.randomUUID();
